@@ -1,0 +1,44 @@
+# Resume TP Jenkins - Docker - Kubernetes
+
+## Fichiers Created
+- package.json
+- server.js
+- Dockerfile
+- Jenkinsfile
+- deployment.yaml
+- service.yaml
+- src/index.html, app.js, styles.css, utils.js
+- tests/app.test.js
+
+## GitHub
+- Repo: github.com/Mohasni/devops-tp
+- Code: deja push
+
+## Prochaines etapes
+
+### 1. Kubernetes (choisir une option)
+- Option A: Redemarrer PC puis activer Kubernetes dans Docker Desktop
+- Option B: Installer Minikube:
+  `choco install minikube`
+  `minikube start`
+
+### 2. Recuperer kubeconfig
+- Minikube: `minikube kubeconfig > kubeconfig`
+- Docker Desktop: aller dans Settings > Kubernetes > Show contexts
+
+### 3. Installer Jenkins
+`docker run -d -p 8080:8080 jenkins/jenkins:lts`
+- URL: http://localhost:8080
+
+### 4. Configurer Jenkins
+- Installer plugins: Docker, Kubernetes, Pipeline
+- Creer credentials:
+  - Docker Hub (ID: docker-hub-credentials)
+  - Kubeconfig (ID: kubeconfig)
+
+### 5. Creer Pipeline job
+- Nouveau > Pipeline
+- Pointer vers Jenkinsfile dans le repo Git
+
+### 6. Premier build
+- Faire un commit/push pour declencher
